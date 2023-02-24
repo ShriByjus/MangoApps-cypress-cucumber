@@ -49,9 +49,18 @@ When('A user click on share button', ()=>{
     cy.wait(3000);
     logInPageObjects.clickOnShareButton.click();
 })
-When('A user can able to see the uploaded pdf in the MangoApp Dasboard', ()=>{
+Then('A user will able to see the uploaded pdf in the MangoApp Dasboard key {string}', (key)=>{
     cy.wait(2000);
+    logInPageObjects.searchUploadedPDF.click({force: true});
+    logInPageObjects.searchUploadedPDF.type(key);
+    logInPageObjects.searchUploadedPDF.type('{enter}');
+})
+When('A user will open and verify recent uploaded pdf file', ()=>{
+    cy.wait(3000);
+    logInPageObjects.openUploadedPdfFile.click();
+})
+Then('A user will able to see the correct uploaded pdf file using view option', ()=>{
+    cy.wait(3000);
     logInPageObjects.verifyUploadedPdfFile.click();
     logInPageObjects.viewUploadedPdfFile.click();
-
 })

@@ -56,6 +56,22 @@ class mangoAppPages {
         return cy.get("a[class='attachment_file view detailsMenu']", { timeout: 30000 });
     }
 
+    get searchUploadedPDF() {
+        return cy.get("#web-search-box", { timeout: 30000 });
+    }
+
+    get openUploadedPdfFile() {
+        return cy.get("div[class='beta-search-list todo-feed-reader -bound']:nth-child(1)", { timeout: 30000 });
+    }
+
+    get verifyUploadedPdfFile() {
+        return cy.get("div[class='ms-doc-actions madn-button']", { timeout: 30000 });
+    }
+
+    get viewUploadedPdfFile() {
+        return cy.get("a[class='attachment_file view detailsMenu']", { timeout: 30000 });
+    }
+
 
 }
 export default mangoAppPages
